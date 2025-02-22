@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom';
 const WelcomeSection = () => {
   return (
     <section className="min-h-screen flex flex-col items-center justify-center px-4 py-12 bg-interview-background animate-fadeIn relative">
+      <div className='w-40 h-10 bg-gray-200 absolute right-5 bottom-5'></div>
       <Spline className='-z-50 absolute' scene="https://prod.spline.design/ZQTNW4Xgt323Png8/scene.splinecode" />
       <div className="max-w-2xl w-full space-y-8 text-center">
         <div className="space-y-10">

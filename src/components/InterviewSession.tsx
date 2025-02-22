@@ -6,6 +6,7 @@ import { supabase } from "@/integrations/supabase/client";
 import { useToast } from "@/hooks/use-toast";
 import { Link } from "react-router-dom";
 import ParticleSwarmLoader from "./ui/ParticleSwarmLoader";
+import StaggeredFadeLoader from "./ui/StaggeredFadeLoader";
 
 interface Answer {
   question: string;
@@ -174,8 +175,8 @@ const InterviewSession = () => {
       <div className="p-4 bg-interview-card shadow-lg">
         <Card className="p-6 space-y-4">
           {isLoading ? (
-            <div className="text-lg font-medium text-gray-500">
-              Thinking...
+            <div className="">
+              <StaggeredFadeLoader/>
             </div>
           ) : finalEvaluation ? (
             <div className="space-y-4">
