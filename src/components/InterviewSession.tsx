@@ -1,9 +1,11 @@
 import { useState, useEffect, useRef } from "react";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
-import { Mic, Send, Upload } from "lucide-react";
+import { ArrowLeft, Mic, Send, Upload } from "lucide-react";
 import { supabase } from "@/integrations/supabase/client";
 import { useToast } from "@/hooks/use-toast";
+import { Link } from "react-router-dom";
+import ParticleSwarmLoader from "./ui/ParticleSwarmLoader";
 
 interface Answer {
   question: string;
@@ -151,10 +153,21 @@ const InterviewSession = () => {
   }, []);
 
   return (
-    <div className="min-h-screen flex flex-col bg-interview-background">
+    <div className="min-h-screen flex flex-col bg-interview-background p-12">
+      <div className="w-34">
+      <Link
+          to="/interview-setup"
+          className="inline-flex items-center px-6 py-3 text-base font-medium text-white bg-gray-900 rounded-full hover:bg-gray-700 transition-all duration-200 gap-2"
+        >
+          <ArrowLeft className="w-5 h-5" />
+          Go back
+        </Link>
+      </div>
       {/* Avatar Section */}
       <div className="flex-1 flex items-center justify-center p-4">
-        <div className="w-32 h-32 bg-interview-accent rounded-full animate-float shadow-lg" />
+        <div className="w-32 h-32 bg-interview-accent rounded-full animate-float shadow-lg">
+          <ParticleSwarmLoader/>
+          </div> 
       </div>
 
       {/* Interview Interface */}
@@ -196,7 +209,7 @@ const InterviewSession = () => {
               <div className="space-y-4">
                 <div className="flex justify-between items-center">
                   <p className="text-lg font-medium">
-                    Question {questionCount}/10
+                    Questions {questionCount}/10
                   </p>
                 </div>
                 <p className="text-lg">

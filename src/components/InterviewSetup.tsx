@@ -57,12 +57,8 @@ const InterviewSetup = () => {
 
   return (
     <div className="min-h-screen flex flex-col space-y-5 items-center justify-center bg-gray-500 p-4">
-      {/* <Button className="flex items-center justify-center ">
-        <Link to="/">
-        <ArrowLeft className="w-4 h-4 ml-2" />
-        Back
-        </Link>  
-      </Button> */}
+
+      
       <Link
           to="/"
           className="inline-flex items-center px-6 py-3 text-base font-medium text-white bg-gray-900 rounded-full hover:bg-gray-700 transition-all duration-200 gap-2"
