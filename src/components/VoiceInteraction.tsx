@@ -24,17 +24,10 @@ const VoiceInteraction = () => {
         handleUserMessage(transcript);
       };
 
-      recognition.current.onerror = (event: any) => {
-        console.error('Speech recognition error', event.error);
+      recognition.current.onerror = () => {
+        console.error('Speech recognition error');
         setIsListening(false);
       };
-
-      recognition.current.onend = () => {
-        console.log('Speech recognition ended');
-        setIsListening(false);
-      };
-    } else {
-      console.error('Speech recognition not supported in this browser.');
     }
   }, []);
 
