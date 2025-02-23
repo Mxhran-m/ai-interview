@@ -54,6 +54,13 @@ const InterviewSetup = () => {
     }
     navigate('/interview');
   };
+  const handleConvo = () => {
+    sessionStorage.setItem('interviewRole', role);
+    if (resumeText) {
+      sessionStorage.setItem('resumeText', resumeText); 
+    }
+    navigate('/calling');
+  };
 
   return (
     <div className="min-h-screen flex flex-col space-y-5 items-center justify-center bg-gray-500 p-4">
@@ -118,13 +125,21 @@ const InterviewSetup = () => {
           <Button
             className="w-full bg-interview-accent hover:bg-opacity-90"
             disabled={!role.trim()}
+            onClick={handleConvo}
+          >
+            Start Interview with avatar
+            <ArrowRight className="w-4 h-4 ml-2" />
+          </Button>
+          {/* <Button
+            className="w-full bg-interview-accent hover:bg-opacity-90"
+            disabled={!role.trim()}
           >
             <Link className="inline-flex items-center"
             to={"/calling"}>
             Start Interview with avatar
             <ArrowRight className="w-4 h-4 ml-2" />
             </Link>
-          </Button>
+          </Button> */}
         </div>
       </Card>
     </div>

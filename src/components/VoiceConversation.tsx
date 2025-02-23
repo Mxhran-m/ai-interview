@@ -59,11 +59,11 @@ const VoiceConversation = () => {
       <h1 className="md:text-5xl text-3xl font-bold mb-4 text-center ">Interview with Our Avatar</h1>
       <div className="mb-4">
         <span className={`text-lg ${isConnected ? 'text-green-500' : 'text-red-500'}`}>
-          {isConnected ? 'Connected' : 'Disconnected'}
+          {isConnected ? 'Connected' : 'press the start button to start interview'}
         </span>
       </div>
       <div className="mb-4">
-        <span className="text-lg">Agent Status: {agentStatus}</span>
+        <span className="text-lg">Status: {agentStatus}</span>
       </div>
       {isConnected ? <ParticleSwarmLoader/> : <h1 className='h-40 w-full flex items-center justify-center text-blue-400 '><StaggeredFadeLoader/></h1>}
       {error && <div className="text-red-500 mb-4">Error: {error}</div>}
