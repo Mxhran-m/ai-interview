@@ -8,8 +8,6 @@ import Index from "./pages/Index";
 import InterviewSetup from "./pages/InterviewSetup";
 import Interview from "./pages/Interview";
 import NotFound from "./pages/NotFound";
-import VoiceInteraction from "./components/VoiceInteraction";
-import ConversationalAIPage from "./components/ConversationalAIPage";
 import VoiceConversation from "./components/VoiceConversation";
 
 const queryClient = new QueryClient();
@@ -24,8 +22,6 @@ const App = () => (
           <Route path="/" element={<Index />} />
           <Route path="/interview-setup" element={<InterviewSetup />} />
           <Route path="/interview" element={<Interview />} />
-          <Route path="/talk" element={<VoiceInteraction/>} />
-          <Route path="/call" element={<ConversationalAIPage/>} />
           <Route path="/calling" element={<VoiceConversation/>} />
           <Route path="*" element={<NotFound />} />
         </Routes>

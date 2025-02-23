@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Conversation } from '@11labs/client';
+import ParticleSwarmLoader from './ui/ParticleSwarmLoader';
+import StaggeredFadeLoader from './ui/StaggeredFadeLoader';
 
 const VoiceConversation = () => {
   const [conversation, setConversation] = useState(null);
@@ -53,8 +55,8 @@ const VoiceConversation = () => {
   };
 
   return (
-    <div className="flex flex-col items-center p-4 bg-gray-100 min-h-screen">
-      <h1 className="text-2xl font-bold mb-4">Voice Conversation with AI Agent</h1>
+    <div className="flex flex-col items-center md:p-40 p-20 bg-gray-100 min-h-screen">
+      <h1 className="md:text-5xl text-3xl font-bold mb-4 text-center ">Interview with Our Avatar</h1>
       <div className="mb-4">
         <span className={`text-lg ${isConnected ? 'text-green-500' : 'text-red-500'}`}>
           {isConnected ? 'Connected' : 'Disconnected'}
@@ -63,6 +65,7 @@ const VoiceConversation = () => {
       <div className="mb-4">
         <span className="text-lg">Agent Status: {agentStatus}</span>
       </div>
+      {isConnected ? <ParticleSwarmLoader/> : <h1 className='h-40 w-full flex items-center justify-center text-blue-400 '><StaggeredFadeLoader/></h1>}
       {error && <div className="text-red-500 mb-4">Error: {error}</div>}
       <div className="flex space-x-4">
         <button
